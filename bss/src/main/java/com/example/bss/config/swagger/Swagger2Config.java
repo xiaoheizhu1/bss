@@ -1,4 +1,4 @@
-package com.example.bss.config;
+package com.example.bss.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 
