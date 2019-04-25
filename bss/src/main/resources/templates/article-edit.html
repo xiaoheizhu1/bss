@@ -1,0 +1,524 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico">
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/lib/html5.js"></script>
+<script type="text/javascript" src="static/lib/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui/css/H-ui.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/css/H-ui.admin.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/lib/Hui-iconfont/1.0.8/iconfont.css}" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/skin/default/skin.css}" id="skin" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/css/style.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/js/select2.min.css}" />
+<style>
+.select1 {
+	margin: 0px auto 0;
+	width: 965px;
+}
+
+.select1>span {
+	width: 80% !important;
+}
+.page-container .input-text.radius{
+	width: 80% !important;
+}
+.page-container .textarea.radius{
+	width: 80% !important;
+}
+</style>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>新增项目 - 项目管理 - 预算汇总系统</title>
+<meta name="keywords"
+	content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description"
+	content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+	<article class="page-container">
+		<form class="form form-horizontal" action="javascript:void(0)" id="form-article-add">
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>项目名称：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.xmmc}"
+						placeholder="最大可输入100个字符" id="" name="xmmc">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>类型：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="xmlx">
+							<option>请选择</option>
+							<option th:selected="${resutlList.xmlx=='电子机具运转费（元）'}">电子机具运转费（元）</option>
+							<option th:selected="${resutlList.xmlx=='固定资产（元）'}">固定资产（元）</option>
+							<option th:selected="${resutlList.xmlx=='无形资产（元）'}">无形资产（元）</option>
+							<option th:selected="${resutlList.xmlx=='线路通讯费（元）'}">线路通讯费（元）</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>负责人：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="fzr">
+							<option>请选择</option>
+							<option th:each="p:${personList}" th:selected="${resutlList.xm==p.xm}"th:value="${p.id}"
+								th:text="${p.xm}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>所属地：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="ssd">
+							<option>请选择</option>
+							<option th:selected="${resutlList.ssd=='北京'}">北京</option>
+							<option th:selected="${resutlList.ssd=='公司'}">公司</option>
+							<option th:selected="${resutlList.ssd=='昆明'}">昆明</option>
+							<option th:selected="${resutlList.ssd=='上海'}">上海</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>财务科目归类：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="cwkmgl">
+							<option>请选择</option>
+							<option th:selected="${resutlList.cwkmgl=='电子机具运转费'}">电子机具运转费</option>
+							<option th:selected="${resutlList.cwkmgl=='无形资产'}">无形资产</option>
+							<option th:selected="${resutlList.cwkmgl=='邮电通讯费'}">邮电通讯费</option>
+							<option th:selected="${resutlList.cwkmgl=='固定资产-电子设备'}">固定资产-电子设备</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>是否立项：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="sflx" type="radio" th:attr ="checked=${resutlList.sflx == '需立项'?true:false}" value="需立项" id="sflx1">
+					<label for="sflx1">需立项</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" th:attr ="checked=${resutlList.sflx == '立项后执行'?true:false}" value="立项后执行" id="sflx2" name="sflx">
+					<label for="sflx2">立项后执行</label>
+				</div>
+			</div>
+		</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>项目分类：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="xmfl">
+							<option>请选择</option>
+							<option th:selected="${resutlList.lb==c.lb}" th:each="c:${classList}" th:value="${c.id}"
+								th:text="${c.lb}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>费用归属部门：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="fygsbm">
+							<option>请选择</option>
+							<option th:selected="${resutlList.bmmc==d.bmmc}" th:each="d:${departemntList}" th:value="${d.id}"
+								th:text="${d.bmmc}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>属性：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="sx">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.sx=='业务部门'}">业务部门</option>
+							 <option th:selected="${resutlList.sx=='中后台'}">中后台</option>
+							 <option th:selected="${resutlList.sx=='见明细'}">见明细</option>
+							<option>请选择</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span
+					class="c-red">*</span>确定性：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="qdx" type="radio" th:attr ="checked=${resutlList.qdx == '预估'?true:false}" value="预估"  id="qdx1">
+					<label for="qdx1">预估</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" th:attr ="checked=${resutlList.qdx == '确定'?true:false}" value="确定" id="qdx2" name="qdx">	
+					<label for="qdx2">确定</label>
+				</div>
+			</div>
+		</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">项目说明：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<textarea name="xmsm" cols="" rows="" class="textarea radius" th:text="${resutlList.xmsm}"
+						placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true"
+						nullmsg="备注不能为空！" ></textarea>
+					<p class="textarea-numberbar">
+						<em class="textarea-length">0</em>/200
+					</p>
+				</div>
+			</div>
+			<div style="height: 30px"></div>
+				<hr
+					style=" height: 1px; border: none; border-top: 6px solid #C5C1AA;align-content: center;"
+					size="3px" noshade="none" />
+			<div style="height: 30px"></div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">单价：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.dj}"
+						placeholder="最大金额10,0000,0000元" id="" name="dj">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">数量 ：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.sl}"
+						placeholder="最大数值100000" id="" name="sl">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">总预算金额：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.zysje}"
+						placeholder="最大金额10,0000,0000元" id="" name="zysje">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">19年新增：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.xz_19}"
+						placeholder="最大金额10,0000,0000元" id="" name="xz_19">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">18年递延：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.dy_18}"
+						placeholder="最大金额10,0000,0000元" id="" name="dy_18">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">已支付：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.yzf}"
+						placeholder="最大金额10,0000,0000元" id="" name="yzf">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">备注：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius"
+						placeholder="说点什么..." id="" name="bz">
+				</div>
+			</div>
+			<div style="height: 30px"></div>
+				<hr
+					style="height: 1px; border: none; border-top: 6px solid #C5C1AA;align-content: center;"
+					size="3px" noshade="none" />
+			<div style="height: 30px"></div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">供应商：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="gysmc">
+							<option>请选择</option>
+							<option th:selected="${resutlList.gysmc==s.gysmc}" th:each="s:${supplierList}" th:value="${s.id}"
+								th:text="${s.gysmc}"></option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">对应业务：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="dyyw">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.dyyw=='传统需求'}">传统需求</option>
+							 <option th:selected="${resutlList.dyyw=='证券业务'}">证券业务</option>
+							 <option th:selected="${resutlList.dyyw=='消金业务'}">消金业务</option>
+							 <option th:selected="${resutlList.dyyw=='资产证券化'}">资产证券化</option>
+							 <option th:selected="${resutlList.dyyw=='数据业务'}">数据业务</option>
+							 <option th:selected="${resutlList.dyyw=='证券&消金业务'}">证券&消金业务</option>
+							 <option th:selected="${resutlList.dyyw=='个人理财业务'}">个人理财业务</option>
+							 <option th:selected="${resutlList.dyyw=='其他'}">其他</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">必要优先级：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="byyxj">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.byyxj=='固定支出'}">固定支出</option>
+							 <option th:selected="${resutlList.byyxj=='>按计划预计支出'}">按计划预计支出</option>
+							 <option th:selected="${resutlList.byyxj=='支持未来需要部分支出'}">支持未来需要部分支出</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">对应业务板块：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="dyywbk">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.dyywbk=='传统业务支持'}">传统业务支持</option>
+							 <option th:selected="${resutlList.dyywbk=='非业务板块'}">非业务板块</option>
+							 <option th:selected="${resutlList.dyywbk=='供应链金融'}">供应链金融</option>
+							 <option th:selected="${resutlList.dyywbk=='科技综合支持'}">科技综合支持</option>
+							 <option th:selected="${resutlList.dyywbk=='数据中心项目'}">数据中心项目</option>
+							 <option th:selected="${resutlList.dyywbk=='信托证券投资'}">信托证券投资</option>
+							 <option th:selected="${resutlList.dyywbk=='消费金融业务'}">消费金融业务</option>
+							 <option th:selected="${resutlList.dyywbk=='监管政策支持'}">监管政策支持</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">资本性支出/费用性支出：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="zcfs">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.zcfs=='费用性支出-电子机具运转费'}">费用性支出-电子机具运转费</option>
+							 <option th:selected="${resutlList.zcfs=='费用性支出-研究开发费'}">费用性支出-研究开发费</option>
+							 <option th:selected="${resutlList.zcfs=='费用性支出-邮电通讯费'}">费用性支出-邮电通讯费</option>
+							 <option th:selected="${resutlList.zcfs=='费用性支出-职工教育经费'}">费用性支出-职工教育经费</option>
+							 <option th:selected="${resutlList.zcfs=='费用性支出-咨询费'}">费用性支出-咨询费</option>
+							 <option th:selected="${resutlList.zcfs=='资本性支出-固定资产'}">资本性支出-固定资产</option>
+							 <option th:selected="${resutlList.zcfs=='资本性支出-无形资产'}">资本性支出-无形资产</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">IT建设费用：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="itjsfy">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.itjsfy=='基础建设'}">基础建设</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> IT运维成本：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius"  th:value="${resutlList.itywcb}"
+						placeholder="Excel显示(非此分类) " id="" name="itywcb">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> 往年预算移至今年预算：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.wnysyzjnys}"
+						placeholder="Excel显示(非此分类) " id="" name="wnysyzjnys">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> 创新业务拓展预算：</label>
+				<div class="formControls col-xs-8 col-sm-9"> 
+					<input type="text" class="input-text radius" th:value="${resutlList.cxywkzys}"
+						placeholder="Excel显示(非此分类) " id="" name="cxywkzys">
+				</div>
+			</div>
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">固定刚性支出：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="gdgxzc" type="radio" th:attr ="checked=${resutlList.gdgxzc == '是'?true:false}" value="是"  id="gdgxzc1">
+					<label for="gdgxzc1">是</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" th:attr ="checked=${resutlList.gdgxzc == '否'?true:false}" value="否" id="gdgxzc2" name="gdgxzc">
+					<label for="gdgxzc2">否</label>
+				</div>
+			</div>
+		</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> 助力业务增长：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.zlywzz}"
+						placeholder="Excel显示(非此选项 " id="" name="zlywzz">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> 提升效率：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.tsxl}"
+						placeholder="Excel显示(非此选项) " id="" name="tsxl">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2">项目属性：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<div class="select1">
+						<select class="mySelect" name="xmsx">
+							<option>请选择</option>
+							 <option th:selected="${resutlList.xmsx=='传统项目'}">传统项目</option>
+							 <option th:selected="${resutlList.xmsx=='创新&传统'}">创新&传统</option>
+							 <option th:selected="${resutlList.xmsx=='创新项目'}">创新项目</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-2"> 创新科研：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text radius" th:value="${resutlList.cxky}"
+						placeholder="" id="" name="cxky">
+				</div>
+			</div>
+			<div style="height: 30px"></div>
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+					<button onClick="projectInfo_save(2);"
+						class="btn btn-primary radius">
+						<i class="Hui-iconfont">&#xe632;</i> 保存并提交审核
+					</button>
+					<button onClick="projectInfo_save(3);" class="btn btn-secondary radius"
+						type="button">
+						<i class="Hui-iconfont">&#xe632;</i> 保存草稿
+					</button>
+				</div>
+			</div>
+		</form>
+	</article>
+
+	<!--_footer 作为公共模版分离出去-->
+	<script type="text/javascript"
+		src="static/lib/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/select2.full.min.js"></script>
+	<script type="text/javascript" src="static/lib/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="static/static/h-ui/js/H-ui.js"></script>
+	<script type="text/javascript"
+		src="static/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+	<!--/_footer /作为公共模版分离出去-->
+
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript"
+		src="static/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript"
+		src="static/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+	<script type="text/javascript"
+		src="static/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+	<script type="text/javascript"
+		src="static/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+	<script type="text/javascript"
+		src="static/lib/webuploader/0.1.5/webuploader.min.js"></script>
+	<!--/请在上方写此页面业务相关的脚本-->
+    <script type="text/javascript">
+    $(function() {
+		$('.skin-minimal input').iCheck({
+			checkboxClass : 'icheckbox-blue',
+			radioClass : 'iradio-blue',
+			increaseArea : '20%'
+		});
+		$(function() {
+			$('.mySelect').select2();
+		})
+		// 定义serializeObject方法，序列化表单
+		$.fn.serializeObject = function() {
+			var o = {};
+			var a = this.serializeArray();
+			$.each(a, function() {
+				if (o[this.name]) {
+					if (!o[this.name].push) {
+						o[this.name] = [ o[this.name] ];
+					}
+					o[this.name].push(this.value || '');
+				} else {
+					o[this.name] = this.value || '';
+				}
+			});
+			return o;
+		};
+	});
+	
+	function projectInfo_save(flag) {
+		$.ajax({
+			url : "/saveProjectInfo.do?flag="+flag,
+			type : 'POST',
+			dataType : 'JSON',
+			contentType : 'application/json',
+			data : JSON.stringify($('#form-article-add').serializeObject()),
+			success : function(data) {
+				if (data.code == '1') {
+					layer.confirm('已保存! 退出请关闭页面!',{
+						icon : 6
+					});
+				} else if (data.code == '-1') {
+					layer.confirm(data.message, {
+						icon : 5
+					});
+				} else if (data.code == '001') {
+					layer.confirm('保存失败! 数据错误!', {
+						icon : 5
+					});
+				}
+
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				console.log('XMLHttpRequest:');
+				console.log(XMLHttpRequest);
+				layer.msg('网络异常！尝试刷新网页解决问题', {
+					icon : 5
+				});
+			}
+		});
+	}
+    </script>
+</body>
+</html>

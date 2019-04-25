@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="static/lib/html5.js"></script>
+<script type="text/javascript" src="static/lib/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui/css/H-ui.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/css/H-ui.admin.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/lib/Hui-iconfont/1.0.8/iconfont.css}" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/skin/default/skin.css}" id="skin" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{~/static/static/h-ui.admin/css/style.css}" />
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript"
+	src="static/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript"
+	src="static/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<style type="text/css">
+.ui-sortable .panel-header {
+	cursor: move
+}
+</style>
+
+</head>
+<script type="text/javascript">
+
+	
+	var User = function() {
+	
+		
+		this.init = function() {
+			//模拟上传excel  
+			$("#uploadEventBtn").unbind("click").bind("click", function() {
+				$("#uploadEventFile").click();
+			});
+			$("#uploadEventFile").bind(
+					"change",
+					function() {
+						$("#uploadEventPath").attr("value",
+								$("#uploadEventFile").val());
+					});
+		};
+		//点击上传钮  
+		this.uploadBtn = function() {
+			var uploadEventFile =  $("#uploadEventFile").val();
+			if (uploadEventFile == '') {
+				alert("请择excel,再上传");
+			} else  {
+				var url = "/excel/import";
+				var formData = new FormData($('form')[0]);
+				user.sendAjaxRequest(url, "POST", formData);
+			}
+		};
+		this.sendAjaxRequest = function(url, type, data) {
+			$.ajax({
+				url : url,
+				type : type,
+				data : data,
+				dataType : "json",
+				success : function(result) {
+					console.log("成功");
+				},
+				error : function(result) {
+				   console.log("失败");
+				},
+				cache : false,
+				contentType : false,
+				processData : false
+			});
+		};
+	};
+
+	var user;
+	$(function() {
+		
+		user = new User();
+		user.init();
+	});
+</script>
+<body>
+	<form enctype="multipart/form-data" id="batchUpload"
+		action="/excel/import" method="post" class="form-horizontal">
+		<button class="btn btn-primary upload-btn" id="uploadEventBtn"
+			type="button">择文件</button>
+		<input type="file" name="file" style="width: 0px; height: 0px;"
+			id="uploadEventFile" /> 
+			<input class="input-text upload-url valid" id="uploadEventPath"
+			disabled="disabled" type="text" placeholder="请择excel表" />
+	</form>
+	<button type="button" class="btn btn-primary upload-btn"
+		onclick="user.uploadBtn()">上传</button>
+    
+	<img id="turn_img" src="" />
+
+
+<input type="file" id="file" name="file_name" class="input w300" onchange="ii(this);"/>
+
+</body>
+</html>

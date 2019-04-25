@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bss.dao.BssProjectInfoMapper">
+	<resultMap id="BaseResultMap"
+		type="com.example.bss.pojo.BssProjectInfo">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="xmlx" jdbcType="VARCHAR" property="xmlx" />
+		<result column="xmmc" jdbcType="VARCHAR" property="xmmc" />
+		<result column="xmsm" jdbcType="VARCHAR" property="xmsm" />
+		<result column="ssd" jdbcType="VARCHAR" property="ssd" />
+		<result column="fzr" jdbcType="INTEGER" property="fzr" />
+		<result column="cwkmgl" jdbcType="VARCHAR" property="cwkmgl" />
+		<result column="sflx" jdbcType="VARCHAR" property="sflx" />
+		<result column="xmfl" jdbcType="INTEGER" property="xmfl" />
+		<result column="fygsbm" jdbcType="INTEGER" property="fygsbm" />
+		<result column="sx" jdbcType="VARCHAR" property="sx" />
+		<result column="qdx" jdbcType="VARCHAR" property="qdx" />
+		<result column="gys" jdbcType="INTEGER" property="gys" />
+		<result column="dyyw" jdbcType="VARCHAR" property="dyyw" />
+		<result column="byyxj" jdbcType="VARCHAR" property="byyxj" />
+		<result column="dyywbk" jdbcType="VARCHAR" property="dyywbk" />
+		<result column="zcfs" jdbcType="VARCHAR" property="zcfs" />
+		<result column="itjsfy" jdbcType="VARCHAR" property="itjsfy" />
+		<result column="itywcb" jdbcType="VARCHAR" property="itywcb" />
+		<result column="wnysyzjnys" jdbcType="VARCHAR"
+			property="wnysyzjnys" />
+		<result column="cxywkzys" jdbcType="VARCHAR"
+			property="cxywkzys" />
+		<result column="gdgxzc" jdbcType="VARCHAR" property="gdgxzc" />
+		<result column="zlywzz" jdbcType="VARCHAR" property="zlywzz" />
+		<result column="tsxl" jdbcType="VARCHAR" property="tsxl" />
+		<result column="xmsx" jdbcType="VARCHAR" property="xmsx" />
+		<result column="cxky" jdbcType="VARCHAR" property="cxky" />
+		<result column="qtxm" jdbcType="VARCHAR" property="qtxm" />
+		<result column="zys" jdbcType="VARCHAR" property="zys" />
+		<result column="bz" jdbcType="VARCHAR" property="bz" />
+		<result column="status" jdbcType="VARCHAR" property="status" />
+		<result column="reserved1" jdbcType="VARCHAR"
+			property="reserved1" />
+		<result column="reserved2" jdbcType="VARCHAR"
+			property="reserved2" />
+		<result column="reserved3" jdbcType="VARCHAR"
+			property="reserved3" />
+		<result column="create_time" jdbcType="VARCHAR"
+			property="createTime" />
+		<result column="update_time" jdbcType="VARCHAR"
+			property="updateTime" />
+	</resultMap>
+	<resultMap id="ResultMap1" type="java.util.HashMap">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="xmlx" jdbcType="VARCHAR" property="xmlx" />
+		<result column="xmmc" jdbcType="VARCHAR" property="xmmc" />
+		<result column="xmsm" jdbcType="VARCHAR" property="xmsm" />
+		<result column="ssd" jdbcType="VARCHAR" property="ssd" />
+		<result column="fzr" jdbcType="INTEGER" property="fzr" />
+		<result column="cwkmgl" jdbcType="VARCHAR" property="cwkmgl" />
+		<result column="sflx" jdbcType="VARCHAR" property="sflx" />
+		<result column="xmfl" jdbcType="INTEGER" property="xmfl" />
+		<result column="fygsbm" jdbcType="INTEGER" property="fygsbm" />
+		<result column="sx" jdbcType="VARCHAR" property="sx" />
+		<result column="qdx" jdbcType="VARCHAR" property="qdx" />
+		<result column="gys" jdbcType="INTEGER" property="gys" />
+		<result column="dyyw" jdbcType="VARCHAR" property="dyyw" />
+		<result column="byyxj" jdbcType="VARCHAR" property="byyxj" />
+		<result column="dyywbk" jdbcType="VARCHAR" property="dyywbk" />
+		<result column="zcfs" jdbcType="VARCHAR" property="zcfs" />
+		<result column="itjsfy" jdbcType="VARCHAR" property="itjsfy" />
+		<result column="itywcb" jdbcType="VARCHAR" property="itywcb" />
+		<result column="wnysyzjnys" jdbcType="VARCHAR"
+			property="wnysyzjnys" />
+		<result column="cxywkzys" jdbcType="VARCHAR"
+			property="cxywkzys" />
+		<result column="gdgxzc" jdbcType="VARCHAR" property="gdgxzc" />
+		<result column="zlywzz" jdbcType="VARCHAR" property="zlywzz" />
+		<result column="tsxl" jdbcType="VARCHAR" property="tsxl" />
+		<result column="xmsx" jdbcType="VARCHAR" property="xmsx" />
+		<result column="cxky" jdbcType="VARCHAR" property="cxky" />
+		<result column="qtxm" jdbcType="VARCHAR" property="qtxm" />
+		<result column="zys" jdbcType="VARCHAR" property="zys" />
+		<result column="bz" jdbcType="VARCHAR" property="bz" />
+		<result column="status" jdbcType="VARCHAR" property="status" />
+		<result column="reserved1" jdbcType="VARCHAR"
+			property="reserved1" />
+		<result column="reserved2" jdbcType="VARCHAR"
+			property="reserved2" />
+		<result column="reserved3" jdbcType="VARCHAR"
+			property="reserved3" />
+		<result column="create_time" jdbcType="VARCHAR"
+			property="createTime" />
+		<result column="update_time" jdbcType="VARCHAR"
+			property="updateTime" />
+		<result column="dj" jdbcType="VARCHAR" property="dj" />
+		<result column="sl" jdbcType="VARCHAR" property="sl" />
+		<result column="zysje" jdbcType="VARCHAR" property="zysje" />
+		<result column="xz_19" jdbcType="VARCHAR" property="xz19" />
+		<result column="dy_18" jdbcType="VARCHAR" property="dy18" />
+		<result column="yzf" jdbcType="VARCHAR" property="yzf" />
+		<result column="xm" jdbcType="VARCHAR" property="xm" />
+		<result column="lb" jdbcType="VARCHAR" property="lb" />
+		<result column="bmmc" jdbcType="VARCHAR" property="bmmc" />
+		<result column="gysmc" jdbcType="VARCHAR" property="gysmc" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value}
+									and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value"
+										item="listItem" open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value}
+									and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value"
+										item="listItem" open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		id, xmlx, xmmc, xmsm, ssd, fzr, cwkmgl, sflx, xmfl, fygsbm,
+		sx, qdx, gys,
+		dyyw, byyxj,
+		dyywbk, zcfs, itjsfy, itywcb, wnysyzjnys,
+		cxywkzys, gdgxzc, zlywzz, tsxl,
+		xmsx, cxky,
+		qtxm, zys, bz, status,
+		reserved1, reserved2, reserved3, create_time,
+		update_time
+	</sql>
+	<select id="selectByExample"
+		parameterType="com.example.bss.pojo.BssProjectInfoExample"
+		resultMap="BaseResultMap">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		'true' as QUERYID,
+		<include refid="Base_Column_List" />
+		from bss_project_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey"
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select 'true' as QUERYID,
+		<include refid="Base_Column_List" />
+		from bss_project_info
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey"
+		parameterType="java.lang.Integer">
+		delete from bss_project_info
+		where id =
+		#{id,jdbcType=INTEGER}
+	</delete>
+	<delete id="deleteByExample"
+		parameterType="com.example.bss.pojo.BssProjectInfoExample">
+		delete from bss_project_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert"
+		parameterType="com.example.bss.pojo.BssProjectInfo">
+		<selectKey keyProperty="id" order="AFTER"
+			resultType="java.lang.Integer">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into bss_project_info (xmlx, xmmc, xmsm,
+		ssd, fzr, cwkmgl, sflx,
+		xmfl, fygsbm, sx, qdx,
+		gys, dyyw, byyxj, dyywbk,
+		zcfs, itjsfy, itywcb,
+		wnysyzjnys, cxywkzys, gdgxzc,
+		zlywzz, tsxl, xmsx,
+		cxky, qtxm, zys, bz,
+		status, reserved1, reserved2,
+		reserved3, create_time, update_time
+		)
+		values (#{xmlx,jdbcType=VARCHAR}, #{xmmc,jdbcType=VARCHAR},
+		#{xmsm,jdbcType=VARCHAR},
+		#{ssd,jdbcType=VARCHAR},
+		#{fzr,jdbcType=INTEGER}, #{cwkmgl,jdbcType=VARCHAR},
+		#{sflx,jdbcType=VARCHAR},
+		#{xmfl,jdbcType=INTEGER},
+		#{fygsbm,jdbcType=INTEGER}, #{sx,jdbcType=VARCHAR},
+		#{qdx,jdbcType=VARCHAR},
+		#{gys,jdbcType=INTEGER},
+		#{dyyw,jdbcType=VARCHAR}, #{byyxj,jdbcType=VARCHAR},
+		#{dyywbk,jdbcType=VARCHAR},
+		#{zcfs,jdbcType=VARCHAR},
+		#{itjsfy,jdbcType=VARCHAR}, #{itywcb,jdbcType=VARCHAR},
+		#{wnysyzjnys,jdbcType=VARCHAR}, #{cxywkzys,jdbcType=VARCHAR},
+		#{gdgxzc,jdbcType=VARCHAR},
+		#{zlywzz,jdbcType=VARCHAR},
+		#{tsxl,jdbcType=VARCHAR}, #{xmsx,jdbcType=VARCHAR},
+		#{cxky,jdbcType=VARCHAR}, #{qtxm,jdbcType=VARCHAR},
+		#{zys,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR},
+		#{status,jdbcType=VARCHAR}, #{reserved1,jdbcType=VARCHAR},
+		#{reserved2,jdbcType=VARCHAR},
+		#{reserved3,jdbcType=VARCHAR},
+		#{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.example.bss.pojo.BssProjectInfo">
+		<selectKey keyProperty="id" order="AFTER"
+			resultType="java.lang.Integer">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into bss_project_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="xmlx != null">
+				xmlx,
+			</if>
+			<if test="xmmc != null">
+				xmmc,
+			</if>
+			<if test="xmsm != null">
+				xmsm,
+			</if>
+			<if test="ssd != null">
+				ssd,
+			</if>
+			<if test="fzr != null">
+				fzr,
+			</if>
+			<if test="cwkmgl != null">
+				cwkmgl,
+			</if>
+			<if test="sflx != null">
+				sflx,
+			</if>
+			<if test="xmfl != null">
+				xmfl,
+			</if>
+			<if test="fygsbm != null">
+				fygsbm,
+			</if>
+			<if test="sx != null">
+				sx,
+			</if>
+			<if test="qdx != null">
+				qdx,
+			</if>
+			<if test="gys != null">
+				gys,
+			</if>
+			<if test="dyyw != null">
+				dyyw,
+			</if>
+			<if test="byyxj != null">
+				byyxj,
+			</if>
+			<if test="dyywbk != null">
+				dyywbk,
+			</if>
+			<if test="zcfs != null">
+				zcfs,
+			</if>
+			<if test="itjsfy != null">
+				itjsfy,
+			</if>
+			<if test="itywcb != null">
+				itywcb,
+			</if>
+			<if test="wnysyzjnys != null">
+				wnysyzjnys,
+			</if>
+			<if test="cxywkzys != null">
+				cxywkzys,
+			</if>
+			<if test="gdgxzc != null">
+				gdgxzc,
+			</if>
+			<if test="zlywzz != null">
+				zlywzz,
+			</if>
+			<if test="tsxl != null">
+				tsxl,
+			</if>
+			<if test="xmsx != null">
+				xmsx,
+			</if>
+			<if test="cxky != null">
+				cxky,
+			</if>
+			<if test="qtxm != null">
+				qtxm,
+			</if>
+			<if test="zys != null">
+				zys,
+			</if>
+			<if test="bz != null">
+				bz,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="reserved1 != null">
+				reserved1,
+			</if>
+			<if test="reserved2 != null">
+				reserved2,
+			</if>
+			<if test="reserved3 != null">
+				reserved3,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="xmlx != null">
+				#{xmlx,jdbcType=VARCHAR},
+			</if>
+			<if test="xmmc != null">
+				#{xmmc,jdbcType=VARCHAR},
+			</if>
+			<if test="xmsm != null">
+				#{xmsm,jdbcType=VARCHAR},
+			</if>
+			<if test="ssd != null">
+				#{ssd,jdbcType=VARCHAR},
+			</if>
+			<if test="fzr != null">
+				#{fzr,jdbcType=INTEGER},
+			</if>
+			<if test="cwkmgl != null">
+				#{cwkmgl,jdbcType=VARCHAR},
+			</if>
+			<if test="sflx != null">
+				#{sflx,jdbcType=VARCHAR},
+			</if>
+			<if test="xmfl != null">
+				#{xmfl,jdbcType=INTEGER},
+			</if>
+			<if test="fygsbm != null">
+				#{fygsbm,jdbcType=INTEGER},
+			</if>
+			<if test="sx != null">
+				#{sx,jdbcType=VARCHAR},
+			</if>
+			<if test="qdx != null">
+				#{qdx,jdbcType=VARCHAR},
+			</if>
+			<if test="gys != null">
+				#{gys,jdbcType=INTEGER},
+			</if>
+			<if test="dyyw != null">
+				#{dyyw,jdbcType=VARCHAR},
+			</if>
+			<if test="byyxj != null">
+				#{byyxj,jdbcType=VARCHAR},
+			</if>
+			<if test="dyywbk != null">
+				#{dyywbk,jdbcType=VARCHAR},
+			</if>
+			<if test="zcfs != null">
+				#{zcfs,jdbcType=VARCHAR},
+			</if>
+			<if test="itjsfy != null">
+				#{itjsfy,jdbcType=VARCHAR},
+			</if>
+			<if test="itywcb != null">
+				#{itywcb,jdbcType=VARCHAR},
+			</if>
+			<if test="wnysyzjnys != null">
+				#{wnysyzjnys,jdbcType=VARCHAR},
+			</if>
+			<if test="cxywkzys != null">
+				#{cxywkzys,jdbcType=VARCHAR},
+			</if>
+			<if test="gdgxzc != null">
+				#{gdgxzc,jdbcType=VARCHAR},
+			</if>
+			<if test="zlywzz != null">
+				#{zlywzz,jdbcType=VARCHAR},
+			</if>
+			<if test="tsxl != null">
+				#{tsxl,jdbcType=VARCHAR},
+			</if>
+			<if test="xmsx != null">
+				#{xmsx,jdbcType=VARCHAR},
+			</if>
+			<if test="cxky != null">
+				#{cxky,jdbcType=VARCHAR},
+			</if>
+			<if test="qtxm != null">
+				#{qtxm,jdbcType=VARCHAR},
+			</if>
+			<if test="zys != null">
+				#{zys,jdbcType=VARCHAR},
+			</if>
+			<if test="bz != null">
+				#{bz,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved1 != null">
+				#{reserved1,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved2 != null">
+				#{reserved2,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved3 != null">
+				#{reserved3,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample"
+		parameterType="com.example.bss.pojo.BssProjectInfoExample"
+		resultType="java.lang.Long">
+		select count(*) from bss_project_info
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update bss_project_info
+		<set>
+			<if test="record.id != null">
+				id = #{record.id,jdbcType=INTEGER},
+			</if>
+			<if test="record.xmlx != null">
+				xmlx = #{record.xmlx,jdbcType=VARCHAR},
+			</if>
+			<if test="record.xmmc != null">
+				xmmc = #{record.xmmc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.xmsm != null">
+				xmsm = #{record.xmsm,jdbcType=VARCHAR},
+			</if>
+			<if test="record.ssd != null">
+				ssd = #{record.ssd,jdbcType=VARCHAR},
+			</if>
+			<if test="record.fzr != null">
+				fzr = #{record.fzr,jdbcType=INTEGER},
+			</if>
+			<if test="record.cwkmgl != null">
+				cwkmgl = #{record.cwkmgl,jdbcType=VARCHAR},
+			</if>
+			<if test="record.sflx != null">
+				sflx = #{record.sflx,jdbcType=VARCHAR},
+			</if>
+			<if test="record.xmfl != null">
+				xmfl = #{record.xmfl,jdbcType=INTEGER},
+			</if>
+			<if test="record.fygsbm != null">
+				fygsbm = #{record.fygsbm,jdbcType=INTEGER},
+			</if>
+			<if test="record.sx != null">
+				sx = #{record.sx,jdbcType=VARCHAR},
+			</if>
+			<if test="record.qdx != null">
+				qdx = #{record.qdx,jdbcType=VARCHAR},
+			</if>
+			<if test="record.gys != null">
+				gys = #{record.gys,jdbcType=INTEGER},
+			</if>
+			<if test="record.dyyw != null">
+				dyyw = #{record.dyyw,jdbcType=VARCHAR},
+			</if>
+			<if test="record.byyxj != null">
+				byyxj = #{record.byyxj,jdbcType=VARCHAR},
+			</if>
+			<if test="record.dyywbk != null">
+				dyywbk = #{record.dyywbk,jdbcType=VARCHAR},
+			</if>
+			<if test="record.zcfs != null">
+				zcfs = #{record.zcfs,jdbcType=VARCHAR},
+			</if>
+			<if test="record.itjsfy != null">
+				itjsfy = #{record.itjsfy,jdbcType=VARCHAR},
+			</if>
+			<if test="record.itywcb != null">
+				itywcb = #{record.itywcb,jdbcType=VARCHAR},
+			</if>
+			<if test="record.wnysyzjnys != null">
+				wnysyzjnys = #{record.wnysyzjnys,jdbcType=VARCHAR},
+			</if>
+			<if test="record.cxywkzys != null">
+				cxywkzys = #{record.cxywkzys,jdbcType=VARCHAR},
+			</if>
+			<if test="record.gdgxzc != null">
+				gdgxzc = #{record.gdgxzc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.zlywzz != null">
+				zlywzz = #{record.zlywzz,jdbcType=VARCHAR},
+			</if>
+			<if test="record.tsxl != null">
+				tsxl = #{record.tsxl,jdbcType=VARCHAR},
+			</if>
+			<if test="record.xmsx != null">
+				xmsx = #{record.xmsx,jdbcType=VARCHAR},
+			</if>
+			<if test="record.cxky != null">
+				cxky = #{record.cxky,jdbcType=VARCHAR},
+			</if>
+			<if test="record.qtxm != null">
+				qtxm = #{record.qtxm,jdbcType=VARCHAR},
+			</if>
+			<if test="record.zys != null">
+				zys = #{record.zys,jdbcType=VARCHAR},
+			</if>
+			<if test="record.bz != null">
+				bz = #{record.bz,jdbcType=VARCHAR},
+			</if>
+			<if test="record.status != null">
+				status = #{record.status,jdbcType=VARCHAR},
+			</if>
+			<if test="record.reserved1 != null">
+				reserved1 = #{record.reserved1,jdbcType=VARCHAR},
+			</if>
+			<if test="record.reserved2 != null">
+				reserved2 = #{record.reserved2,jdbcType=VARCHAR},
+			</if>
+			<if test="record.reserved3 != null">
+				reserved3 = #{record.reserved3,jdbcType=VARCHAR},
+			</if>
+			<if test="record.createTime != null">
+				create_time = #{record.createTime,jdbcType=VARCHAR},
+			</if>
+			<if test="record.updateTime != null">
+				update_time = #{record.updateTime,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update bss_project_info
+		set id = #{record.id,jdbcType=INTEGER},
+		xmlx =
+		#{record.xmlx,jdbcType=VARCHAR},
+		xmmc =
+		#{record.xmmc,jdbcType=VARCHAR},
+		xmsm =
+		#{record.xmsm,jdbcType=VARCHAR},
+		ssd = #{record.ssd,jdbcType=VARCHAR},
+		fzr = #{record.fzr,jdbcType=INTEGER},
+		cwkmgl =
+		#{record.cwkmgl,jdbcType=VARCHAR},
+		sflx =
+		#{record.sflx,jdbcType=VARCHAR},
+		xmfl =
+		#{record.xmfl,jdbcType=INTEGER},
+		fygsbm =
+		#{record.fygsbm,jdbcType=INTEGER},
+		sx = #{record.sx,jdbcType=VARCHAR},
+		qdx = #{record.qdx,jdbcType=VARCHAR},
+		gys =
+		#{record.gys,jdbcType=INTEGER},
+		dyyw = #{record.dyyw,jdbcType=VARCHAR},
+		byyxj = #{record.byyxj,jdbcType=VARCHAR},
+		dyywbk =
+		#{record.dyywbk,jdbcType=VARCHAR},
+		zcfs =
+		#{record.zcfs,jdbcType=VARCHAR},
+		itjsfy =
+		#{record.itjsfy,jdbcType=VARCHAR},
+		itywcb =
+		#{record.itywcb,jdbcType=VARCHAR},
+		wnysyzjnys =
+		#{record.wnysyzjnys,jdbcType=VARCHAR},
+		cxywkzys =
+		#{record.cxywkzys,jdbcType=VARCHAR},
+		gdgxzc =
+		#{record.gdgxzc,jdbcType=VARCHAR},
+		zlywzz =
+		#{record.zlywzz,jdbcType=VARCHAR},
+		tsxl =
+		#{record.tsxl,jdbcType=VARCHAR},
+		xmsx =
+		#{record.xmsx,jdbcType=VARCHAR},
+		cxky =
+		#{record.cxky,jdbcType=VARCHAR},
+		qtxm =
+		#{record.qtxm,jdbcType=VARCHAR},
+		zys = #{record.zys,jdbcType=VARCHAR},
+		bz = #{record.bz,jdbcType=VARCHAR},
+		status =
+		#{record.status,jdbcType=VARCHAR},
+		reserved1 =
+		#{record.reserved1,jdbcType=VARCHAR},
+		reserved2 =
+		#{record.reserved2,jdbcType=VARCHAR},
+		reserved3 =
+		#{record.reserved3,jdbcType=VARCHAR},
+		create_time =
+		#{record.createTime,jdbcType=VARCHAR},
+		update_time =
+		#{record.updateTime,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.example.bss.pojo.BssProjectInfo">
+		update bss_project_info
+		<set>
+			<if test="xmlx != null">
+				xmlx = #{xmlx,jdbcType=VARCHAR},
+			</if>
+			<if test="xmmc != null">
+				xmmc = #{xmmc,jdbcType=VARCHAR},
+			</if>
+			<if test="xmsm != null">
+				xmsm = #{xmsm,jdbcType=VARCHAR},
+			</if>
+			<if test="ssd != null">
+				ssd = #{ssd,jdbcType=VARCHAR},
+			</if>
+			<if test="fzr != null">
+				fzr = #{fzr,jdbcType=INTEGER},
+			</if>
+			<if test="cwkmgl != null">
+				cwkmgl = #{cwkmgl,jdbcType=VARCHAR},
+			</if>
+			<if test="sflx != null">
+				sflx = #{sflx,jdbcType=VARCHAR},
+			</if>
+			<if test="xmfl != null">
+				xmfl = #{xmfl,jdbcType=INTEGER},
+			</if>
+			<if test="fygsbm != null">
+				fygsbm = #{fygsbm,jdbcType=INTEGER},
+			</if>
+			<if test="sx != null">
+				sx = #{sx,jdbcType=VARCHAR},
+			</if>
+			<if test="qdx != null">
+				qdx = #{qdx,jdbcType=VARCHAR},
+			</if>
+			<if test="gys != null">
+				gys = #{gys,jdbcType=INTEGER},
+			</if>
+			<if test="dyyw != null">
+				dyyw = #{dyyw,jdbcType=VARCHAR},
+			</if>
+			<if test="byyxj != null">
+				byyxj = #{byyxj,jdbcType=VARCHAR},
+			</if>
+			<if test="dyywbk != null">
+				dyywbk = #{dyywbk,jdbcType=VARCHAR},
+			</if>
+			<if test="zcfs != null">
+				zcfs = #{zcfs,jdbcType=VARCHAR},
+			</if>
+			<if test="itjsfy != null">
+				itjsfy = #{itjsfy,jdbcType=VARCHAR},
+			</if>
+			<if test="itywcb != null">
+				itywcb = #{itywcb,jdbcType=VARCHAR},
+			</if>
+			<if test="wnysyzjnys != null">
+				wnysyzjnys = #{wnysyzjnys,jdbcType=VARCHAR},
+			</if>
+			<if test="cxywkzys != null">
+				cxywkzys = #{cxywkzys,jdbcType=VARCHAR},
+			</if>
+			<if test="gdgxzc != null">
+				gdgxzc = #{gdgxzc,jdbcType=VARCHAR},
+			</if>
+			<if test="zlywzz != null">
+				zlywzz = #{zlywzz,jdbcType=VARCHAR},
+			</if>
+			<if test="tsxl != null">
+				tsxl = #{tsxl,jdbcType=VARCHAR},
+			</if>
+			<if test="xmsx != null">
+				xmsx = #{xmsx,jdbcType=VARCHAR},
+			</if>
+			<if test="cxky != null">
+				cxky = #{cxky,jdbcType=VARCHAR},
+			</if>
+			<if test="qtxm != null">
+				qtxm = #{qtxm,jdbcType=VARCHAR},
+			</if>
+			<if test="zys != null">
+				zys = #{zys,jdbcType=VARCHAR},
+			</if>
+			<if test="bz != null">
+				bz = #{bz,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved1 != null">
+				reserved1 = #{reserved1,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved2 != null">
+				reserved2 = #{reserved2,jdbcType=VARCHAR},
+			</if>
+			<if test="reserved3 != null">
+				reserved3 = #{reserved3,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.example.bss.pojo.BssProjectInfo">
+		update bss_project_info
+		set xmlx =
+		#{xmlx,jdbcType=VARCHAR},
+		xmmc = #{xmmc,jdbcType=VARCHAR},
+		xmsm =
+		#{xmsm,jdbcType=VARCHAR},
+		ssd = #{ssd,jdbcType=VARCHAR},
+		fzr =
+		#{fzr,jdbcType=INTEGER},
+		cwkmgl = #{cwkmgl,jdbcType=VARCHAR},
+		sflx =
+		#{sflx,jdbcType=VARCHAR},
+		xmfl = #{xmfl,jdbcType=INTEGER},
+		fygsbm =
+		#{fygsbm,jdbcType=INTEGER},
+		sx = #{sx,jdbcType=VARCHAR},
+		qdx =
+		#{qdx,jdbcType=VARCHAR},
+		gys = #{gys,jdbcType=INTEGER},
+		dyyw =
+		#{dyyw,jdbcType=VARCHAR},
+		byyxj = #{byyxj,jdbcType=VARCHAR},
+		dyywbk =
+		#{dyywbk,jdbcType=VARCHAR},
+		zcfs = #{zcfs,jdbcType=VARCHAR},
+		itjsfy =
+		#{itjsfy,jdbcType=VARCHAR},
+		itywcb = #{itywcb,jdbcType=VARCHAR},
+		wnysyzjnys = #{wnysyzjnys,jdbcType=VARCHAR},
+		cxywkzys =
+		#{cxywkzys,jdbcType=VARCHAR},
+		gdgxzc = #{gdgxzc,jdbcType=VARCHAR},
+		zlywzz = #{zlywzz,jdbcType=VARCHAR},
+		tsxl = #{tsxl,jdbcType=VARCHAR},
+		xmsx = #{xmsx,jdbcType=VARCHAR},
+		cxky = #{cxky,jdbcType=VARCHAR},
+		qtxm =
+		#{qtxm,jdbcType=VARCHAR},
+		zys = #{zys,jdbcType=VARCHAR},
+		bz =
+		#{bz,jdbcType=VARCHAR},
+		status = #{status,jdbcType=VARCHAR},
+		reserved1 =
+		#{reserved1,jdbcType=VARCHAR},
+		reserved2 =
+		#{reserved2,jdbcType=VARCHAR},
+		reserved3 =
+		#{reserved3,jdbcType=VARCHAR},
+		create_time =
+		#{createTime,jdbcType=VARCHAR},
+		update_time =
+		#{updateTime,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<insert id="insertBatchSelective" parameterType="java.util.List">
+		insert into bss_project_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="list[0].id!=null">
+				id,
+			</if>
+			<if test="list[0].xmlx!=null">
+				xmlx,
+			</if>
+			<if test="list[0].xmmc!=null">
+				xmmc,
+			</if>
+			<if test="list[0].xmsm!=null">
+				xmsm,
+			</if>
+			<if test="list[0].ssd!=null">
+				ssd,
+			</if>
+			<if test="list[0].fzr!=null">
+				fzr,
+			</if>
+			<if test="list[0].cwkmgl!=null">
+				cwkmgl,
+			</if>
+			<if test="list[0].sflx!=null">
+				sflx,
+			</if>
+			<if test="list[0].xmfl!=null">
+				xmfl,
+			</if>
+			<if test="list[0].fygsbm!=null">
+				fygsbm,
+			</if>
+			<if test="list[0].sx!=null">
+				sx,
+			</if>
+			<if test="list[0].qdx!=null">
+				qdx,
+			</if>
+			<if test="list[0].gys!=null">
+				gys,
+			</if>
+			<if test="list[0].dyyw!=null">
+				dyyw,
+			</if>
+			<if test="list[0].byyxj!=null">
+				byyxj,
+			</if>
+			<if test="list[0].dyywbk!=null">
+				dyywbk,
+			</if>
+			<if test="list[0].zcfs!=null">
+				zcfs,
+			</if>
+			<if test="list[0].itjsfy!=null">
+				itjsfy,
+			</if>
+			<if test="list[0].itywcb!=null">
+				itywcb,
+			</if>
+			<if test="list[0].wnysyzjnys!=null">
+				wnysyzjnys,
+			</if>
+			<if test="list[0].cxywkzys!=null">
+				cxywkzys,
+			</if>
+			<if test="list[0].gdgxzc!=null">
+				gdgxzc,
+			</if>
+			<if test="list[0].zlywzz!=null">
+				zlywzz,
+			</if>
+			<if test="list[0].tsxl!=null">
+				tsxl,
+			</if>
+			<if test="list[0].xmsx!=null">
+				xmsx,
+			</if>
+			<if test="list[0].cxky!=null">
+				cxky,
+			</if>
+			<if test="list[0].qtxm!=null">
+				qtxm,
+			</if>
+			<if test="list[0].zys!=null">
+				zys,
+			</if>
+			<if test="list[0].bz!=null">
+				bz,
+			</if>
+			<if test="list[0].status!=null">
+				status,
+			</if>
+			<if test="list[0].reserved1!=null">
+				reserved1,
+			</if>
+			<if test="list[0].reserved2!=null">
+				reserved2,
+			</if>
+			<if test="list[0].reserved3!=null">
+				reserved3,
+			</if>
+			<if test="list[0].createTime!=null">
+				create_time,
+			</if>
+			<if test="list[0].updateTime!=null">
+				update_time,
+			</if>
+		</trim>
+		values
+		<foreach collection="list" index="index" item="item"
+			separator=",">
+			<trim prefix=" (" suffix=")" suffixOverrides=",">
+				<if test="item.id!=null">
+					#{item.id,jdbcType=INTEGER},
+				</if>
+				<if test="item.xmlx!=null">
+					#{item.xmlx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmmc!=null">
+					#{item.xmmc,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmsm!=null">
+					#{item.xmsm,jdbcType=VARCHAR},
+				</if>
+				<if test="item.ssd!=null">
+					#{item.ssd,jdbcType=VARCHAR},
+				</if>
+				<if test="item.fzr!=null">
+					#{item.fzr,jdbcType=INTEGER},
+				</if>
+				<if test="item.cwkmgl!=null">
+					#{item.cwkmgl,jdbcType=VARCHAR},
+				</if>
+				<if test="item.sflx!=null">
+					#{item.sflx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmfl!=null">
+					#{item.xmfl,jdbcType=INTEGER},
+				</if>
+				<if test="item.fygsbm!=null">
+					#{item.fygsbm,jdbcType=INTEGER},
+				</if>
+				<if test="item.sx!=null">
+					#{item.sx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.qdx!=null">
+					#{item.qdx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.gys!=null">
+					#{item.gys,jdbcType=INTEGER},
+				</if>
+				<if test="item.dyyw!=null">
+					#{item.dyyw,jdbcType=VARCHAR},
+				</if>
+				<if test="item.byyxj!=null">
+					#{item.byyxj,jdbcType=VARCHAR},
+				</if>
+				<if test="item.dyywbk!=null">
+					#{item.dyywbk,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zcfs!=null">
+					#{item.zcfs,jdbcType=VARCHAR},
+				</if>
+				<if test="item.itjsfy!=null">
+					#{item.itjsfy,jdbcType=VARCHAR},
+				</if>
+				<if test="item.itywcb!=null">
+					#{item.itywcb,jdbcType=VARCHAR},
+				</if>
+				<if test="item.wnysyzjnys!=null">
+					#{item.wnysyzjnys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.cxywkzys!=null">
+					#{item.cxywkzys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.gdgxzc!=null">
+					#{item.gdgxzc,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zlywzz!=null">
+					#{item.zlywzz,jdbcType=VARCHAR},
+				</if>
+				<if test="item.tsxl!=null">
+					#{item.tsxl,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmsx!=null">
+					#{item.xmsx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.cxky!=null">
+					#{item.cxky,jdbcType=VARCHAR},
+				</if>
+				<if test="item.qtxm!=null">
+					#{item.qtxm,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zys!=null">
+					#{item.zys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.bz!=null">
+					#{item.bz,jdbcType=VARCHAR},
+				</if>
+				<if test="item.status!=null">
+					#{item.status,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved1!=null">
+					#{item.reserved1,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved2!=null">
+					#{item.reserved2,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved3!=null">
+					#{item.reserved3,jdbcType=VARCHAR},
+				</if>
+				<if test="item.createTime!=null">
+					#{item.createTime,jdbcType=VARCHAR},
+				</if>
+				<if test="item.updateTime!=null">
+					#{item.updateTime,jdbcType=VARCHAR},
+				</if>
+			</trim>
+		</foreach>
+	</insert>
+	<update id="updateBatchByPrimaryKeySelective"
+		parameterType="java.util.List">
+		<foreach collection="list" index="index" item="item"
+			separator=";">
+			update bss_project_info
+			<set>
+				<if test="item.xmlx!=null">
+					xmlx=#{item.xmlx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmmc!=null">
+					xmmc=#{item.xmmc,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmsm!=null">
+					xmsm=#{item.xmsm,jdbcType=VARCHAR},
+				</if>
+				<if test="item.ssd!=null">
+					ssd=#{item.ssd,jdbcType=VARCHAR},
+				</if>
+				<if test="item.fzr!=null">
+					fzr=#{item.fzr,jdbcType=INTEGER},
+				</if>
+				<if test="item.cwkmgl!=null">
+					cwkmgl=#{item.cwkmgl,jdbcType=VARCHAR},
+				</if>
+				<if test="item.sflx!=null">
+					sflx=#{item.sflx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmfl!=null">
+					xmfl=#{item.xmfl,jdbcType=INTEGER},
+				</if>
+				<if test="item.fygsbm!=null">
+					fygsbm=#{item.fygsbm,jdbcType=INTEGER},
+				</if>
+				<if test="item.sx!=null">
+					sx=#{item.sx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.qdx!=null">
+					qdx=#{item.qdx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.gys!=null">
+					gys=#{item.gys,jdbcType=INTEGER},
+				</if>
+				<if test="item.dyyw!=null">
+					dyyw=#{item.dyyw,jdbcType=VARCHAR},
+				</if>
+				<if test="item.byyxj!=null">
+					byyxj=#{item.byyxj,jdbcType=VARCHAR},
+				</if>
+				<if test="item.dyywbk!=null">
+					dyywbk=#{item.dyywbk,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zcfs!=null">
+					zcfs=#{item.zcfs,jdbcType=VARCHAR},
+				</if>
+				<if test="item.itjsfy!=null">
+					itjsfy=#{item.itjsfy,jdbcType=VARCHAR},
+				</if>
+				<if test="item.itywcb!=null">
+					itywcb=#{item.itywcb,jdbcType=VARCHAR},
+				</if>
+				<if test="item.wnysyzjnys!=null">
+					wnysyzjnys=#{item.wnysyzjnys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.cxywkzys!=null">
+					cxywkzys=#{item.cxywkzys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.gdgxzc!=null">
+					gdgxzc=#{item.gdgxzc,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zlywzz!=null">
+					zlywzz=#{item.zlywzz,jdbcType=VARCHAR},
+				</if>
+				<if test="item.tsxl!=null">
+					tsxl=#{item.tsxl,jdbcType=VARCHAR},
+				</if>
+				<if test="item.xmsx!=null">
+					xmsx=#{item.xmsx,jdbcType=VARCHAR},
+				</if>
+				<if test="item.cxky!=null">
+					cxky=#{item.cxky,jdbcType=VARCHAR},
+				</if>
+				<if test="item.qtxm!=null">
+					qtxm=#{item.qtxm,jdbcType=VARCHAR},
+				</if>
+				<if test="item.zys!=null">
+					zys=#{item.zys,jdbcType=VARCHAR},
+				</if>
+				<if test="item.bz!=null">
+					bz=#{item.bz,jdbcType=VARCHAR},
+				</if>
+				<if test="item.status!=null">
+					status=#{item.status,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved1!=null">
+					reserved1=#{item.reserved1,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved2!=null">
+					reserved2=#{item.reserved2,jdbcType=VARCHAR},
+				</if>
+				<if test="item.reserved3!=null">
+					reserved3=#{item.reserved3,jdbcType=VARCHAR},
+				</if>
+				<if test="item.createTime!=null">
+					create_time=#{item.createTime,jdbcType=VARCHAR},
+				</if>
+				<if test="item.updateTime!=null">
+					update_time=#{item.updateTime,jdbcType=VARCHAR},
+				</if>
+			</set>
+			where
+			id = #{item.id,jdbcType=INTEGER}
+		</foreach>
+	</update>
+	<!-- 模糊查询全表 -->
+	<select id="findDim" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from bss_project_info
+		WHERE concat_ws(',',
+		<include refid="Base_Column_List" />
+		) LIKE concat('%','${dim_str}','%')
+	</select>
+	<!-- 查询项目信息表关联其他表取名称 -->
+	<select id="selectProjectInfoJoinAll"
+		parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT i.*,dj, sl, zysje, xz_19, dy_18, yzf, p.xm AS "xm",c.lb,d.bmmc,s.gysmc FROM bss_project_info i
+		LEFT JOIN
+		bss_project_price pr ON i.id=pr.project_id
+		LEFT JOIN bss_project_person p ON
+		i.fzr=p.id
+		LEFT JOIN bss_project_class c ON i.xmfl=c.id
+		LEFT JOIN
+		bss_cost_department d ON i.fygsbm=d.id
+		LEFT JOIN bss_supplier s ON
+		i.gys=s.id
+		<where>
+			<if test="projectid != null">
+				i.id = #{projectid}
+			</if>
+		</where>
+	</select>
+	<!-- 批量删除 -->
+	<delete id="deleteOfbatch" parameterType="java.lang.Integer">
+		delete from bss_project_info where id in
+		<foreach collection="idList" item="arr" open="(" separator=","
+			close=")">
+			#{arr}
+		</foreach>
+	</delete>
+</mapper>

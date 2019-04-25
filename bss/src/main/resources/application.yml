@@ -1,0 +1,38 @@
+logging:
+    level:
+        com:
+          example:
+               bss:
+                 dao: debug
+        org:
+            springframework:
+                web: DEBUG
+        root: INFO
+        
+
+mybatis:
+    config-location: classpath:mybatis/mybatis-config.xml
+    mapperLocations: classpath:mybatis/mapper/*.xml
+    typeAliasesPackage: com.example.bss.pojo
+
+   
+server:
+    port: 8080
+    servlet:
+       session:
+          timeout: 3600s
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/bss?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+        username: root
+    mvc:
+        static-path-pattern: classpath:/static/**,classpath:/resources/webjars/
+    resources:
+        static-locations: classpath:/META-INF/resources/webjars/,classpath:/static/,classpath:/META-INF/resources/
+
+        
+    thymeleaf:
+        cache: false 
